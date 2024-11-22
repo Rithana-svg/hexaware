@@ -1,4 +1,4 @@
-// IPolicyService.java
+
 package dao;
 
 import entity.Policy;
@@ -11,9 +11,6 @@ public interface IPolicyService {
     Collection<Policy> getAllPolicies();
     boolean updatePolicy(Policy policy) throws PolicyNotFoundException;
     boolean deletePolicy(int policyId) throws PolicyNotFoundException;
-}
-
-// InsuranceServiceImpl.java
 package dao;
 
 import entity.Policy;
@@ -33,7 +30,7 @@ public class InsuranceServiceImpl implements IPolicyService {
                 "VALUES (?, ?, ?, ?, ?, ?)")) {
             
             pstmt.setInt(1, policy.getPolicyId());
-            // Set other policy fields
+            
             return pstmt.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -52,7 +49,7 @@ public class InsuranceServiceImpl implements IPolicyService {
             
             if (rs.next()) {
                 Policy policy = new Policy();
-                // Set policy fields from ResultSet
+                
                 return policy;
             } else {
                 throw new PolicyNotFoundException("Policy not found with ID: " + policyId);
@@ -88,7 +85,7 @@ public class InsuranceServiceImpl implements IPolicyService {
                 "UPDATE Policies SET policyType = ?, coverageAmount = ?, premiumAmount = ?, " +
                 "startDate = ?, endDate = ? WHERE policyId = ?")) {
             
-            // Set policy fields
+            
             pstmt.setInt(6, policy.getPolicyId());
             
             if (pstmt.executeUpdate() == 0) {
