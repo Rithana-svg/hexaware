@@ -1,4 +1,4 @@
-// User.java
+
 package entity;
 
 public class User {
@@ -6,11 +6,8 @@ public class User {
     private String username;
     private String password;
     private String role;
-
-    // Default constructor
     public User() {}
 
-    // Parameterized constructor
     public User(int userId, String username, String password, String role) {
         this.userId = userId;
         this.username = username;
@@ -18,7 +15,7 @@ public class User {
         this.role = role;
     }
 
-    // Getters and Setters
+    
     public int getUserId() { return userId; }
     public void setUserId(int userId) { this.userId = userId; }
     public String getUsername() { return username; }
@@ -37,8 +34,6 @@ public class User {
                 '}';
     }
 }
-
-// Client.java
 package entity;
 
 public class Client {
@@ -47,10 +42,10 @@ public class Client {
     private String contactInfo;
     private Policy policy;
 
-    // Default constructor
+    
     public Client() {}
 
-    // Parameterized constructor
+
     public Client(int clientId, String clientName, String contactInfo, Policy policy) {
         this.clientId = clientId;
         this.clientName = clientName;
@@ -58,7 +53,7 @@ public class Client {
         this.policy = policy;
     }
 
-    // Getters and Setters
+
     public int getClientId() { return clientId; }
     public void setClientId(int clientId) { this.clientId = clientId; }
     public String getClientName() { return clientName; }
@@ -79,7 +74,7 @@ public class Client {
     }
 }
 
-// Claim.java
+
 package entity;
 
 import java.util.Date;
@@ -93,10 +88,10 @@ public class Claim {
     private Policy policy;
     private Client client;
 
-    // Default constructor
+    
     public Claim() {}
 
-    // Parameterized constructor
+    
     public Claim(int claimId, String claimNumber, Date dateFiled, 
                 double claimAmount, String status, Policy policy, Client client) {
         this.claimId = claimId;
@@ -108,7 +103,7 @@ public class Claim {
         this.client = client;
     }
 
-    // Getters and Setters
+    
     public int getClaimId() { return claimId; }
     public void setClaimId(int claimId) { this.claimId = claimId; }
     public String getClaimNumber() { return claimNumber; }
@@ -138,7 +133,7 @@ public class Claim {
     }
 }
 
-// Payment.java
+
 package entity;
 
 import java.util.Date;
@@ -149,10 +144,10 @@ public class Payment {
     private double paymentAmount;
     private Client client;
 
-    // Default constructor
+    
     public Payment() {}
 
-    // Parameterized constructor
+    
     public Payment(int paymentId, Date paymentDate, double paymentAmount, Client client) {
         this.paymentId = paymentId;
         this.paymentDate = paymentDate;
@@ -160,7 +155,6 @@ public class Payment {
         this.client = client;
     }
 
-    // Getters and Setters
     public int getPaymentId() { return paymentId; }
     public void setPaymentId(int paymentId) { this.paymentId = paymentId; }
     public Date getPaymentDate() { return paymentDate; }
