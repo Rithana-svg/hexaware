@@ -1,4 +1,4 @@
-// DBConnection.java
+ 
 package util;
 
 import java.sql.Connection;
@@ -17,7 +17,7 @@ public class DBConnection {
     }
 }
 
-// PropertyUtil.java
+
 package util;
 
 import java.io.FileInputStream;
@@ -47,7 +47,6 @@ public class PropertyUtil {
     }
 }
 
-// PolicyNotFoundException.java
 package myexceptions;
 
 public class PolicyNotFoundException extends Exception {
