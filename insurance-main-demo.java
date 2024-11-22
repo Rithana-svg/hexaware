@@ -17,7 +17,7 @@ public class MainModule {
             try {
                 displayMenu();
                 int choice = scanner.nextInt();
-                scanner.nextLine(); // Consume newline
+                scanner.nextLine(); 
 
                 switch (choice) {
                     case 1:
@@ -67,10 +67,10 @@ public class MainModule {
         try {
             System.out.println("\n=== Create New Policy ===");
             
-            // Get policy details from user
+            
             Policy newPolicy = getPolicyDetailsFromUser();
             
-            // Create policy
+            
             boolean created = policyService.createPolicy(newPolicy);
             
             if (created) {
@@ -88,7 +88,7 @@ public class MainModule {
             System.out.println("\n=== View Policy ===");
             System.out.print("Enter Policy ID: ");
             int policyId = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine(); 
 
             try {
                 Policy policy = policyService.getPolicy(policyId);
@@ -125,15 +125,15 @@ public class MainModule {
             System.out.println("\n=== Update Policy ===");
             System.out.print("Enter Policy ID to update: ");
             int policyId = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine(); 
 
-            // First check if policy exists
+            
             try {
                 Policy existingPolicy = policyService.getPolicy(policyId);
                 System.out.println("Current Policy Details:");
                 displayPolicyDetails(existingPolicy);
 
-                // Get updated details
+                
                 Policy updatedPolicy = getPolicyDetailsFromUser();
                 updatedPolicy.setPolicyId(policyId);
 
@@ -156,7 +156,7 @@ public class MainModule {
             System.out.println("\n=== Delete Policy ===");
             System.out.print("Enter Policy ID to delete: ");
             int policyId = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine();
 
             try {
                 boolean deleted = policyService.deletePolicy(policyId);
@@ -181,16 +181,15 @@ public class MainModule {
 
         System.out.print("Enter Coverage Amount: ");
         policy.setCoverageAmount(scanner.nextDouble());
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine(); 
 
         System.out.print("Enter Premium Amount: ");
         policy.setPremiumAmount(scanner.nextDouble());
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine(); 
 
-        // Set current date as start date
+        
         policy.setStartDate(new Date());
 
-        // Set end date as 1 year from now
         Date endDate = new Date();
         endDate.setYear(endDate.getYear() + 1);
         policy.setEndDate(endDate);
